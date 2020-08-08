@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Affairs from "./Affairs";
 
+
 // types
 export type AffairPriorityType = AffairType[]
 export type AffairType = {
@@ -20,16 +21,16 @@ let defaultAffairs: AffairPriorityType = [
 ];
 
 // pure helper functions
-const filterAffairs = (affairs: AffairPriorityType, filter: FilterType): AffairPriorityType => {
+export const filterAffairs = (affairs: AffairPriorityType, filter: FilterType): AffairPriorityType => {
     switch (filter) {
         case "high":
-            return affairs.filter((a) => a.priority === 'high');
+            return affairs.filter((a) => a.priority === "high");
             break;
         case "low":
-            return affairs.filter((a) => a.priority === 'low');
+            return affairs.filter((a) => a.priority === "low");
             break;
         case "middle":
-            return affairs.filter((a) => a.priority === 'middle');
+            return affairs.filter((a) => a.priority === "middle");
             break;
         default:
             return affairs;
@@ -37,7 +38,7 @@ const filterAffairs = (affairs: AffairPriorityType, filter: FilterType): AffairP
     }
 }
 
-const deleteAffair = (affairs: AffairPriorityType, _id: number): AffairPriorityType => {
+export const deleteAffair = (affairs: AffairPriorityType, _id: number): AffairPriorityType => {
     let result = affairs.filter((a) => _id !== a._id);
     return result;
 }
@@ -67,7 +68,8 @@ function HW2() {
 
             <hr/>
             {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeAffairs/>*/}
+            {/*<AlternativeAffairs*/}
+
             <hr/>
         </div>
     );

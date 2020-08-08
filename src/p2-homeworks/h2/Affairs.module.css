@@ -1,3 +1,6 @@
 .someClass {
 
 }
+.alternativeAff  li{
+    list-style-type: none;
+}
