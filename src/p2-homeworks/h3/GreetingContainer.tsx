@@ -25,7 +25,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         alert(`Hello ${name} !`); // need to fix
     };
 
-    const totalUsers = 0; // need to fix
+    const totalUsers: number = 0; // need to fix
 
     return (
         <Greeting
