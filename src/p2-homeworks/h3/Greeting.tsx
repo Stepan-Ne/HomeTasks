@@ -5,22 +5,22 @@ type GreetingPropsType = {
     name: string // need to fix any
     setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void // need to fix any
     addUser: () => void // need to fix any
-    error: any // need to fix any
-    totalUsers: any // need to fix any
+    error: string // need to fix any
+    totalUsers: number // need to fix any
 }
 
 // презентационная компонента (для верстальщика)
 const Greeting: React.FC<GreetingPropsType> = (
     {name, setNameCallback, addUser, error, totalUsers} // деструктуризация пропсов
 ) => {
-    const inputClass = s.error; // need to fix with (?:)
+    const inputClass = error.length ? s.error : s.general; // need to fix with (?:)
 
     return (
-        <div>
+        <div className={s.block}>
             <input value={name} onChange={setNameCallback} className={inputClass}/>
-            <span>{error}err</span>
-            <button onClick={addUser}>add</button>
-            <span>{totalUsers}total</span>
+            <span className={s.err}>{error}</span>
+            <button onClick={addUser} className={s.btn}>add</button>
+            <span>Total users: {totalUsers}</span>
         </div>
     );
 }
