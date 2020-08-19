@@ -1,40 +1,75 @@
-import React from 'react';
-import {render} from '@testing-library/react';
-import Message from "../Message";
+import {CourseType, chipCourses} from "../Message";
 
-test('find text "test message name"', () => {
-    const {getByText} = render((
-        <Message
-            avatar=""
-            name="test message name"
-            message=""
-            time=""
-        />
-    ));
-    const linkElement = getByText(/test message name/i);
-    expect(linkElement).toBeInTheDocument();
-});
-test('find text "test message"', () => {
-    const {getByText} = render((
-        <Message
-            avatar=""
-            name=""
-            message="test message"
-            time=""
-        />
-    ));
-    const linkElement = getByText(/test message/i);
-    expect(linkElement).toBeInTheDocument();
-});
-test('find text "test message time"', () => {
-    const {getByText} = render((
-        <Message
-            avatar=""
-            name=""
-            message=""
-            time="test message time"
-        />
-    ));
-    const linkElement = getByText(/test message time/i);
-    expect(linkElement).toBeInTheDocument();
-});
+export type PropsType = {
+    age: number
+    name: string
+    isDone: boolean
+    address: {
+        city: string
+        index: number
+    }
+}
+
+
+
+let arr: Array<CourseType>
+beforeEach(() => {
+    arr = [
+        {title: "Java", price: 200},
+        {title: "SQL", price: 160},
+        {title: "JS", price: 150}
+    ]
+
+})
+
+test("cheap courses", () => {
+    let chCo;
+    chCo = chipCourses(arr);
+    expect(chCo.length).toBe(1)
+    expect(chCo[0].title).toBe("JS")
+    expect(chCo[0]).toStrictEqual({title: "JS", price: 150})
+
+})
+// type ArrType = {
+//     title: string
+//     int: number
+// }
+// let arr: Array<ArrType>
+// let props: PropsType;
+//
+// beforeEach(() => {
+//     arr = [
+//         {title: "react", int: 100},
+//         {title: "redux", int: 150}
+//     ]
+// })
+// beforeEach(() => {
+//      props = {
+//         age: 34,
+//         name: "John",
+//         isDone: true,
+//          address: {
+//              city: "Moscow",
+//              index: 123123
+//          }
+//     }
+// })
+//
+// test("assign", () => {
+//     const {age, isDone} = props;
+//     const {city} = props.address
+//     const {address} = props
+//
+//     expect(age).toBe(34)
+//     expect(isDone).toBe(true)
+//     expect(city).toBe("Moscow")
+//     expect(address).toStrictEqual({city: "Moscow", index: 123123})
+//
+// })
+// test("destructing array", () => {
+//     const [arr1, arr2] = arr;
+//
+//     expect(arr1.title).toBe("react");
+//     expect(arr2.int).toBe(150);
+//     expect(arr2).toStrictEqual({title: "redux", int: 150})
+// })
