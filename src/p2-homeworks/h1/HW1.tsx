@@ -1,35 +1,26 @@
-import React, { useState } from "react";
-import {SwitchOn} from "./SwitchOn";
+import React, {useState} from "react";
 
-const messageData = {
-    avatar: "https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg",
-    name: "Some Name",
-    message: "some text",
-    time: "22:00",
-};
+import Count from "./Count";
+
 
 function HW1() {
-    const [state, setState] = useState<boolean>(false)
+
+    const [value, setValue] = useState(0);
+    const incrementValue = () => {
+        if (value < 5) {
+            setValue(value + 1);
+        } else {
+            setValue(0);
+        }
+
+    }
     return (
         <div>
-            <hr/>
-            <h2>{state.toString()}</h2>
-            <SwitchOn setState={setState}/>
-
-            {/*should work (должно работать)*/}
-
-            {/*<Message*/}
-            {/*    avatar={messageData.avatar}*/}
-            {/*    name={messageData.name}*/}
-            {/*    message={messageData.message}*/}
-            {/*    time={messageData.time}*/}
-            {/*/>*/}
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeMessage/>*/}
-            <hr/>
+            <Count countValue={value}
+                   incrementValue={incrementValue}
+            />
         </div>
     );
 }
+
 export default HW1;
