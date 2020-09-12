@@ -5,7 +5,6 @@ import HW2 from "../../../p2-homeworks/h2/HW2";
 import HW3 from "../../../p2-homeworks/h3/HW3";
 import Message from "../../../p2-homeworks/h1/Message";
 import Menu from "../../../p2-homeworks/h1/Menu";
-import HW4 from "../../../p2-homeworks/h4/HW4";
 
 
 function App() {
@@ -20,9 +19,8 @@ function App() {
             {/*<HW1/>*/}
             {/*<HW2/>*/}
             {/*<HW3/>*/}
-           {/*<Message/>*/}
-           {/* <Menu title="Menu"/>*/}
-            <HW4/>
+           <Message/>
+            <Menu title="Menu"/>
         </div>
     );
 }

@@ -1,5 +1,5 @@
-import React from "react";
-import Message from "./Message";
+import React, { useState } from "react";
+import {SwitchOn} from "./SwitchOn";
 
 const messageData = {
     avatar: "https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg",
@@ -9,10 +9,12 @@ const messageData = {
 };
 
 function HW1() {
+    const [state, setState] = useState<boolean>(false)
     return (
         <div>
             <hr/>
-            homeworks 1
+            <h2>{state.toString()}</h2>
+            <SwitchOn setState={setState}/>
 
             {/*should work (должно работать)*/}
 
@@ -30,5 +32,4 @@ function HW1() {
         </div>
     );
 }
-
 export default HW1;
