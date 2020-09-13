@@ -10,7 +10,7 @@ type SuperInputTextPropsType = DefaultInputPropsType & { // и + ещё проп
     onChangeText?: (value: string) => void
     onEnter?: () => void
     error?: string
-    spanClassName?: string //ОТКУДА? МОЖЕТ ИМЕЕТСЯ ВВИДУ className: string?
+    spanClassName?: string
     className?: string
 };
 
@@ -39,10 +39,10 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         && onEnter(); // то вызвать его
     }
 
-    // const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ""}`;
-    const finalSpanClassName = `${s.error}`;
+    const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ""}`;
+
     // const finalInputClassName = `${s.errorInput} ${className}`; // need to fix with (?:) and s.superInput
-    const finalInputClassName = `${ error ? s.errorInput : className}`;
+    const finalInputClassName = `${s.superInput} ${ error ? s.errorInput : className}`;
     return (
         <>
             <input

@@ -5,6 +5,7 @@ import SuperButton from "./common/c2-SuperButton/SuperButton";
 import SuperCheckbox from "./common/c3-SuperCheckbox/SuperCheckbox";
 
 function HW4() {
+
     const [text, setText] = useState<string>("");
     const error = text.trim() ? "" : "error";
     const showAlert = () => {
@@ -32,6 +33,7 @@ function HW4() {
                     value={text}
                     onChangeText={setText}
                     onEnter={showAlert}
+                    spanClassName={s.inputErr}
                     error={error}
                     className={s.blue} // проверьте, рабоет ли смешивание классов
                 />

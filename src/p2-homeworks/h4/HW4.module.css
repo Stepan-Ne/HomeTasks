@@ -7,3 +7,7 @@
     flex-direction: column;
     align-items: center;
 }
+.inputErr {
+    border: 2px solid grey;
+    padding: 10px;
+}
