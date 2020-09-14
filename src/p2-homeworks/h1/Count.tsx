@@ -7,6 +7,7 @@ type PropsType = {
     flag: boolean
 }
 const count = {
+    margin: "0 auto",
     borderRadius: "5px",
     backgroundColor: "#f2f2f2",
     padding: "20px",

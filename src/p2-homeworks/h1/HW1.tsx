@@ -20,6 +20,7 @@ function HW1() {
         setValue(0);
         setFlag(false);
     };
+
     return (
         <div>
             <Count countValue={value}

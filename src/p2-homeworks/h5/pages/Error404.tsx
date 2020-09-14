@@ -1,11 +1,12 @@
 import React from "react";
+import s from "./Header.module.css";
 
 function Error404() {
     return (
-        <div>
-            <div>404</div>
-            <div>Page not found!</div>
-            <div>—ฅ/ᐠ.̫ .ᐟ\ฅ—</div>
+        <div id={s.err404}>
+            <div className={s.titleErr}>
+                <h1>Error 404</h1>
+            </div>
         </div>
     );
 }
